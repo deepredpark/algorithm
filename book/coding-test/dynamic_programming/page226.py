@@ -31,3 +31,24 @@ if count[m] == 0:
   print(-1)
 else: 
   print(count[m])
+
+# solution - Dongbin Na
+# a[i - k]를 만드는 방법이 존재하는 경우, a[i] = min(a[i], a[i - k] + 1)
+# a[i - k]를 만드는 방법이 존재하지 않는 경우, a[i] = 10,001
+
+n, m = map(int, sys.stdin.readline().split())
+array = []
+for _ in range(n):
+  array.append(int(sys.stdin.readline()))
+d = [10001] * (m + 1)
+d[0]
+for i in range(n):
+  for j in range(array[i], m +1):
+    if d[j - array[i]] != 10001:
+      d[j] = min(d[j], d[j - array[i]] + 1)
+      
+if d[m] == 10001:
+  print(-1)
+else:
+  print(d[m])
+    
