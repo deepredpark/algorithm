@@ -34,3 +34,4 @@ graph = [list(map(int, input().rstrip())) for _ in range(n)]
 # boom impoosible = visited[_][_][0]
 visited = [[[0, 0] for _ in range(m)] for _ in range(n)]
 print(bfs())
+ 
